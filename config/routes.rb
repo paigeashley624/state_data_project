@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   # end
 
   namespace :api do
-    get "/sample_path" => "pages#sample_action"
+    get "/states", controller: "states", action: "index"
+
   end
 end
 
-
-end
