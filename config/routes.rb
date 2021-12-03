@@ -1,3 +1,5 @@
+
+
 Rails.application.routes.draw do
   # EXAMPLE HTML ROUTE
   # get "/photos" => "photos#index"
@@ -7,9 +9,16 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
 
-  namespace :api do
-    get "/states", controller: "states", action: "index"
+  # namespace :api do
+  #   get "/states", controller: "states", action: "index"
 
-  end
+  # end
+
+
+
+  File.foreach("abbreviations.csv") do |line|
+   state_array = line.split(",")
+   p state_array
+  end   
 end
 
