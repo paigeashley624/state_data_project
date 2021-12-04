@@ -23,4 +23,8 @@ File.foreach("lib/abbreviations.csv") do |line|
   states[state_abr] = state_name
 end
 
-p states
+# p states
+
+File.foreach("lib/abbreviations.csv") do |line|
+  p line
+end

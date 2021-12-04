@@ -1,6 +1,9 @@
 class Api::StatesController < ApplicationController
   def index
-    @message = "Hello!"
+    @states  = state.all
+
+    # @message = "Hello!"
     render "index.json.jb"
   end
+
 end
