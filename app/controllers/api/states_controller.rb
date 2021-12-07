@@ -1,3 +1,5 @@
+require 'csv'
+
 class Api::StatesController < ApplicationController
   def index
     @states  = state.all
