@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_011149) do
+ActiveRecord::Schema.define(version: 2021_12_14_161647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "states", force: :cascade do |t|
-    t.string "name"
+    t.string "state_name"
     t.decimal "median_income"
     t.integer "unemplyed_population"
     t.integer "metro_area_population"
     t.string "highschool_degree"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "abbreviation"
+    t.string "code"
   end
 
 end

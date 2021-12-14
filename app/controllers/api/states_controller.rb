@@ -1,8 +1,8 @@
-require 'csv'
 
 class Api::StatesController < ApplicationController
+  require 'csv'
   def index
-    @states  = state.all
+    @states  = State.all
 
     # @message = "Hello!"
     render "index.json.jb"
