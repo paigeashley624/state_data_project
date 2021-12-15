@@ -1,18 +1,5 @@
 require 'csv'
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# CSV.foreach(Rails.root.join('lib/abbreviations.csv'),headers:true) do |line|
-#   Board.create({
-#     puzzle:row[0],
-#     solution:row[1]
-#   })
-#  end   
 StateAbbreviation.delete_all
 
 # CSV.parse(File.read("lib/abbreviations.csv"),headers: true).each do |line|
@@ -37,3 +24,14 @@ end
 
 
 
+State.delete_all
+CSV.parse(File.read("lib/state_data.csv"),headers: true).each do |line|
+  hash = line.to_hash
+  State.create!(
+    state_name: hash["state"],
+    median_income: hash["median_household_income"],
+    unemplyed_population: hash["share_unemployed_seasonal"],
+    metro_area_population:hash["share_population_in_metro_areas"],  
+    highschool_degree:hash["share_population_with_high_school_degree"],
+  ) 
+end 
