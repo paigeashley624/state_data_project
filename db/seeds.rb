@@ -14,7 +14,7 @@ StateAbbreviation.delete_all
 
 CSV.parse(File.read("lib/abbreviations.csv")).each_with_index do |line, index|
   next if index == 0 #or index.zero? 
-
+  # binding.pry
   StateAbbreviation.create!(
     name:line[0], 
     abbrev:line[1],
