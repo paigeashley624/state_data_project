@@ -1,7 +1,14 @@
 
   # message: @message,
   @states.map do |state|
-  {state_name: state.state_name}
+    {
+      state_name: state.state_name,
+      median_income: state.median_income,
+      unemployed_population: state.unemployed_population,
+      metro_area_population: state.metro_area_population,
+      highschool_degree: state.highschool_degree,
+      
+    }
   end 
 
 

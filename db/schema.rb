@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_172127) do
 
   create_table "states", force: :cascade do |t|
     t.string "state_name"
-    t.decimal "median_income"
+    t.decimal "median_income" #change to an integer 
     t.decimal "unemployed_population"
     t.decimal "metro_area_population"
     t.string "highschool_degree"

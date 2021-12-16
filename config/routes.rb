@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/states", controller: "states", action: "index"
-
+    get "/states/:stateabbreviation", controller: "states", action: "show"
+    
   end
 
 end
