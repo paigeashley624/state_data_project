@@ -12,6 +12,15 @@ CSV.parse(File.read("lib/abbreviations.csv"), headers: true, header_converters: 
   )
 end 
 
+
+
+
+
+
+
+
+
+
 State.delete_all
 CSV.parse(File.read("lib/state_data.csv"), headers: true).each do |line|
   # hash = line.to_hash
